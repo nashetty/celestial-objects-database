@@ -11,7 +11,7 @@ Additional table to document the specific instruments required for observing eac
 
 ## Database Structure
 
-<img width="1432" alt="Screenshot 2024-09-03 at 22 36 37" src="https://github.com/user-attachments/assets/836c1336-d0f2-481b-82b5-88e863af9a43">
+<img width="963" alt="Screenshot 2024-09-06 at 22 56 48" src="https://github.com/user-attachments/assets/c9209567-8780-454d-be25-309ba74174f4">
 
 The schema adheres to 3rd Normal Form (3NF), ensuring that it avoids redundancy and update anomalies.  
 
@@ -137,8 +137,7 @@ Used to update observability table in case a row from planets, moons, stars, con
 
 5 separate triggers to cover the planets, moons, stars, constellation and galaxies table.  
 
-<img width="602" alt="Screenshot 2024-09-03 at 23 10 40" src="https://github.com/user-attachments/assets/91ba2c20-b073-4332-b2ff-f0add5eb53d8">
-
+<img width="540" alt="Screenshot 2024-09-06 at 22 46 09" src="https://github.com/user-attachments/assets/70412946-c38c-4722-8bf9-98158aa0e93e">
 
 ## Views
 2 stored views
@@ -146,7 +145,7 @@ Used to update observability table in case a row from planets, moons, stars, con
 constellations and galaxies that 
 are observable from London 
 (latitude 51.5 N)
-<img width="547" alt="Screenshot 2024-09-03 at 22 54 02" src="https://github.com/user-attachments/assets/81748479-d220-4ab5-b0cd-82ddd4b97fa6">
+<img width="550" alt="Screenshot 2024-09-06 at 22 47 18" src="https://github.com/user-attachments/assets/62e677b8-6080-4b29-8259-7b70321caaf6">
 
 2. A view joining observability table 
 with planets, moons, stars, constellations, 
@@ -158,7 +157,7 @@ SELECT ROW_NUMBER() OVER() AS 'Visible with Naked Eye ', Object_Name, Object_Typ
 FROM observable_objects 
 WHERE instrument = 'Naked Eye';
 ```
-<img width="374" alt="Screenshot 2024-09-03 at 22 54 14" src="https://github.com/user-attachments/assets/e51f0916-cd04-422f-9b12-7f94850219ca">
+<img width="400" alt="Screenshot 2024-09-06 at 22 48 17" src="https://github.com/user-attachments/assets/9d4f457a-de35-49b5-9dbd-2d3ee13187dd">
 
 ## Data source
 Wikipedia  
