@@ -167,6 +167,21 @@ https://littleastronomy.com/galaxy-names/
 https://www.constellation-guide.com/constellations/  
 https://web.pa.msu.edu/people/horvatin/Astronomy_Facts/brightest_stars.html   
 
+## ETL Process
+
+**Extract:** Data was gathered from multiple sources (see above).  
+
+**Transform:** Data was cleaned and formatted using Excel formulas to ensure compatibility with the database schema. This process included correcting inconsistencies, removing irrelevant data, and aligning data formats with the expected schema.  
+
+**Load:** The transformed data was inserted into the database using SQL scripts, ensuring that all entries adhered to the schema and constraints defined in the database.  
+
+## Data Modelling, Data Pipelines, and Data Transformation
+**Data Modelling:** The database schema is designed to be normalized to the 3rd Normal Form (3NF). This design minimizes redundancy and ensures consistency across the different tables. The schema covers a variety of entities, including `planets`, `moons`, `stars`, `constellations`, `galaxies`, `instrumentation`, and `observability`. Each entity has defined attributes and relationships to maintain a coherent and organized data structure.    
+
+**Data Pipelines:** Data pipelines have been implemented to automate the extraction, transformation, and loading (ETL) of data into the database. These pipelines facilitate the continuous update of the database with new or revised data, helping to keep the information current and accurate. This includes `inserting new records`, `updating existing ones`, and ensuring that the database reflects the latest information from various sources. For example, triggers are used to update the observability table in response to deletions from the `planets`, `moons`, `stars`, `constellations`, or `galaxies` tables. These triggers automatically adjust the observability records to reflect the deletion of related objects, thus maintaining the accuracy of the data about which celestial objects are observable. This mechanism ensures that the database remains consistent and up-to-date with the latest changes in the data.    
+
+**Data Transformation:** Data transformation processes were carried out to convert raw data into a format suitable for database storage. This included cleaning data, converting units, and aligning data with the database schema. Transformation rules were applied to ensure data consistency and integrity. Examples of data transformation tasks include `calculating the average radius of different types of planets` and `filtering observable objects based on their visibility` with various types of telescopes or instruments. These transformations help in deriving meaningful insights and ensuring that the data is useful for analysis and reporting.  
+
 ## Setup Instructions
 1. Clone the repository.
    ```bash
